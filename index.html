@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-    * { font-family: 'Noto Sans Sinhala', 'Inter', sans-serif; }
+    * { font-family: 'Noto Sans Sinhala', 'Inter', sans-serif; margin: 0; padding: 0; }
     body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); min-height: 100vh; }
 .glass { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(148, 163, 184, 0.1); }
 .btn-gradient { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); transition: all 0.3s ease; }
@@ -24,60 +24,136 @@
     #videoModal { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
     video { outline: none; }
     video::-webkit-media-controls-enclosure { border-radius: 12px; }
-.banner-container { margin: 16px 0; display: flex; justify-content: center; min-height: 50px; }
+.banner-container { margin: 6px 0; display: flex; justify-content: center; min-height: 50px; }
+    
+.right-side-ad {
+        position: fixed;
+        right: 10px;
+        top: 20px;
+        width: 300px;
+        max-width: calc(50vw - 350px);
+        z-index: 40;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: block;
+    }
+    
+.right-side-ad:hover {
+        transform: translateX(-5px);
+        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+    }
+    
+.right-side-ad img {
+        width: 100%;
+        border-radius: 12px;
+        border: 2px solid rgba(59, 130, 246, 0.3);
+    }
+    
+    @media (max-width: 1024px) {
+ .right-side-ad {
+            display: none;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        #adButtons {
+            grid-template-columns: 1fr!important;
+        }
+  .glass {
+            border-radius: 1.5rem;
+        }
+    }
+    
+    @media (max-width: 640px) {
+        body {
+            padding: 0.5rem;
+        }
+  .glass {
+            border-radius: 1rem;
+        }
+        h1 {
+            font-size: 1.75rem!important;
+        }
+    }
 </style>
    <meta name="monetag" content="c5eb4160bfa92ba35af5f80545b8cd6e">
 </head>
-<body class="text-slate-100 flex items-center justify-center p-4">
+<body class="text-slate-100 flex items-center justify-center p-2 sm:p-4">
+    
+    <!-- දකුණු පැත්තේ Fixed Ad -->
+    <div class="right-side-ad" onclick="window.open('https://assistedtogether.com/nb8cskv4?key=574105cc7bdeb4a09e3b7705e2edd2ce', '_blank')">
+        <img src="image_3e7b98.png" alt="Advertisement">
+    </div>
+
     <div class="w-full max-w-2xl mx-auto">
         
-        <!-- Ad 1 - Page එකේ හොඳටම උඩින් -->
-        <div id="container-834ac17d432e6da4a644ca83d5be1246" class="banner-container"></div>
+        <!-- Banner 1 -->
+        <div class="banner-container">
+            <div id="container-4412dd429ac052637d0b14a28e010588"></div>
+        </div>
         
-        <div class="glass rounded-3xl shadow-2xl overflow-hidden">
+        <!-- Banner 2 -->
+        <div class="banner-container">
+            <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
+        </div>
+        
+        <div class="glass rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden">
             
-            <!-- Ad 2 - Header එකට කලින් -->
-            <div id="container-banner-2" class="banner-container"></div>
+            <!-- Banner 3 -->
+            <div class="banner-container">
+                <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
+            </div>
             
-            <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 md:p-8 text-center relative overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-4 sm:p-6 md:p-8 text-center relative overflow-hidden">
                 <div class="absolute inset-0 bg-black opacity-10"></div>
                 <div class="relative z-10">
-                    <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4 backdrop-blur-sm">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    <div class="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-xl sm:rounded-2xl mb-3 sm:mb-4 backdrop-blur-sm">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                         </svg>
                     </div>
-                    <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Video Lock Box</h1>
-                    <p class="text-blue-100 text-sm md:text-base">වීඩියෝව නැරඹීමට පහත පියවර සම්පූර්ණ කරන්න</p>
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">Video Lock Box</h1>
+                    <p class="text-blue-100 text-xs sm:text-sm md:text-base">වීඩියෝව නැරඹීමට පහත පියවර සම්පූර්ණ කරන්න</p>
                 </div>
             </div>
 
-            <!-- Ad 3 - Header එකට පස්සේ -->
-            <div id="container-banner-3" class="banner-container"></div>
+            <!-- Banner 4 -->
+            <div class="banner-container">
+                <div id="container-4412dd429ac052637d0b14a28e010588"></div>
+            </div>
 
-            <div class="p-6 md:p-8">
+            <div class="p-4 sm:p-6 md:p-8">
                 
-                <!-- Ad 4 - Content එක පටන් ගන්න කලින් -->
-                <div id="container-banner-4" class="banner-container"></div>
+                <!-- Banner 5 -->
+                <div class="banner-container">
+                    <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
+                </div>
                 
-                <div id="statusBox" class="mb-6 p-5 rounded-2xl bg-slate-800/50 border border-slate-700/50">
-                    <div class="flex items-start gap-4">
-                        <div id="statusIcon" class="flex-shrink-0 w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
-                            <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <!-- Banner 6 -->
+                <div class="banner-container">
+                    <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
+                </div>
+                
+                <div id="statusBox" class="mb-4 sm:mb-6 p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-slate-800/50 border-slate-700/50">
+                    <div class="flex items-start gap-3 sm:gap-4">
+                        <div id="statusIcon" class="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-amber-500/20 flex items-center justify-center">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                             </svg>
                         </div>
                         <div class="flex-1">
-                            <h3 id="statusTitle" class="text-lg font-semibold text-white mb-1">Video Locked</h3>
-                            <p id="statusText" class="text-slate-400 text-sm">වීඩියෝව Unlock කිරීමට Ad 2ක් click කරන්න</p>
+                            <h3 id="statusTitle" class="text-base sm:text-lg font-semibold text-white mb-1">Video Locked</h3>
+                            <p id="statusText" class="text-slate-400 text-xs sm:text-sm">වීඩියෝව Unlock කිරීමට Ad 2ක් click කරන්න</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Ad 5 - Status Box එකට පස්සේ -->
-                <div id="container-banner-5" class="banner-container"></div>
+                <!-- Banner 7 -->
+                <div class="banner-container">
+                    <div id="container-4412dd429ac052637d0b14a28e010588"></div>
+                </div>
 
-                <div id="progressContainer" class="mb-6">
+                <div id="progressContainer" class="mb-4 sm:mb-6">
                     <div class="flex justify-between text-xs text-slate-400 mb-2">
                         <span>Unlock Progress</span>
                         <span id="progressText">0/2 Ads</span>
@@ -87,48 +163,62 @@
                     </div>
                 </div>
 
-                <!-- Ad 6 - Progress Bar එකට පස්සේ -->
-                <div id="container-banner-6" class="banner-container"></div>
+                <!-- Banner 8 -->
+                <div class="banner-container">
+                    <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
+                </div>
 
-                <div id="adButtons" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <button onclick="clickAd(1)" id="adBtn1" class="ad-btn text-white font-semibold py-4 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div id="adButtons" class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
+                    <button onclick="clickAd(1)" id="adBtn1" class="ad-btn text-white font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
                         <span>Advertisement 1</span>
                     </button>
-                    <button onclick="clickAd(2)" id="adBtn2" class="ad-btn text-white font-semibold py-4 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button onclick="clickAd(2)" id="adBtn2" class="ad-btn text-white font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
                         <span>Advertisement 2</span>
                     </button>
                 </div>
 
-                <!-- Ad 7 - Buttons දෙකට අතර -->
-                <div id="container-banner-7" class="banner-container"></div>
+                <!-- Banner 9 -->
+                <div class="banner-container">
+                    <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
+                </div>
 
-                <button onclick="watchVideo()" id="watchBtn" disabled class="btn-gradient w-full text-white font-bold py-5 px-6 rounded-xl shadow-lg flex items-center justify-center gap-3 text-lg">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="watchVideo()" id="watchBtn" disabled class="btn-gradient w-full text-white font-bold py-4 sm:py-5 px-4 sm:px-6 rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center gap-2 sm:gap-3 text-base sm:text-lg">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                     </svg>
                     <span>Watch Video</span>
                 </button>
 
-                <!-- Ad 8 - Watch Button එකට පස්සේ -->
-                <div id="container-banner-8" class="banner-container"></div>
-                <!-- Ad 9 -->
-                <div id="container-banner-9" class="banner-container"></div>
-                <!-- Ad 10 -->
-                <div id="container-banner-10" class="banner-container"></div>
-                <!-- Ad 11 -->
-                <div id="container-banner-11" class="banner-container"></div>
-                <!-- Ad 12 -->
-                <div id="container-banner-12" class="banner-container"></div>
+                <!-- Banner 10 -->
+                <div class="banner-container">
+                    <div id="container-4412dd429ac052637d0b14a28e010588"></div>
+                </div>
+                <!-- Banner 11 -->
+                <div class="banner-container">
+                    <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
+                </div>
+                <!-- Banner 12 -->
+                <div class="banner-container">
+                    <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
+                </div>
+                <!-- Banner 13 -->
+                <div class="banner-container">
+                    <div id="container-4412dd429ac052637d0b14a28e010588"></div>
+                </div>
+                <!-- Banner 14 -->
+                <div class="banner-container">
+                    <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
+                </div>
 
-                <div class="mt-6 p-4 bg-blue-500/10 border border-blue-500/20 rounded-xl">
-                    <div class="flex gap-3">
-                        <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="mt-4 sm:mt-6 p-3 sm:p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg sm:rounded-xl">
+                    <div class="flex gap-2 sm:gap-3">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                         <p class="text-xs text-blue-300 leading-relaxed">
@@ -137,53 +227,79 @@
                     </div>
                 </div>
 
-                <!-- Ad 13 - Info box එකට පස්සේ -->
-                <div id="container-banner-13" class="banner-container"></div>
-                <!-- Ad 14 -->
-                <div id="container-banner-14" class="banner-container"></div>
-                <!-- Ad 15 -->
-                <div id="container-banner-15" class="banner-container"></div>
-                <!-- Ad 16 -->
-                <div id="container-banner-16" class="banner-container"></div>
-                <!-- Ad 17 -->
-                <div id="container-banner-17" class="banner-container"></div>
+                <!-- Banner 15 -->
+                <div class="banner-container">
+                    <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
+                </div>
+                <!-- Banner 16 -->
+                <div class="banner-container">
+                    <div id="container-4412dd429ac052637d0b14a28e010588"></div>
+                </div>
+                <!-- Banner 17 -->
+                <div class="banner-container">
+                    <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
+                </div>
+                <!-- Banner 18 -->
+                <div class="banner-container">
+                    <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
+                </div>
+                <!-- Banner 19 -->
+                <div class="banner-container">
+                    <div id="container-4412dd429ac052637d0b14a28e010588"></div>
+                </div>
             </div>
 
-            <!-- Ad 18 - Footer එකට කලින් -->
-            <div id="container-banner-18" class="banner-container"></div>
+            <!-- Banner 20 -->
+            <div class="banner-container">
+                <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
+            </div>
 
-            <div class="bg-slate-900/50 px-6 md:px-8 py-4 border-t border-slate-700/50">
+            <div class="bg-slate-900/50 px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-t border-slate-700/50">
                 <p class="text-center text-slate-500 text-xs">
                     © 2024 Video Lock Box. All rights reserved.
                 </p>
             </div>
 
-            <!-- Ad 19 - Footer එකට පස්සේ -->
-            <div id="container-banner-19" class="banner-container"></div>
-            <!-- Ad 20 - Card එකට යටින් -->
-            <div id="container-banner-20" class="banner-container"></div>
+            <!-- Banner 21 -->
+            <div class="banner-container">
+                <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
+            </div>
+            <!-- Banner 22 -->
+            <div class="banner-container">
+                <div id="container-4412dd429ac052637d0b14a28e010588"></div>
+            </div>
         </div>
 
-        <!-- Ad 21 - Glass Card එකට පස්සේ -->
-        <div id="container-banner-21" class="banner-container"></div>
-        <!-- Ad 22 -->
-        <div id="container-banner-22" class="banner-container"></div>
-        <!-- Ad 23 -->
-        <div id="container-banner-23" class="banner-container"></div>
-        <!-- Ad 24 -->
-        <div id="container-banner-24" class="banner-container"></div>
-        <!-- Ad 25 - හොඳටම යටින් -->
-        <div id="container-banner-25" class="banner-container"></div>
+        <!-- Banner 23 -->
+        <div class="banner-container">
+            <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
+        </div>
+        <!-- Banner 24 -->
+        <div class="banner-container">
+            <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
+        </div>
+        <!-- Banner 25 -->
+        <div class="banner-container">
+            <div id="container-4412dd429ac052637d0b14a28e010588"></div>
+        </div>
+        <!-- Banner 26 -->
+        <div class="banner-container">
+            <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
+        </div>
+        <!-- Banner 27 -->
+        <div class="banner-container">
+            <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
+        </div>
     </div>
 
-    <div id="videoModal" class="hidden fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" onclick="closeModalOnBackdrop(event)">
-        <div class="relative w-full max-w-5xl bg-slate-900 rounded-2xl shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
-            <button onclick="closeVideoModal()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div id="videoModal" class="hidden fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-2 sm:p-4" onclick="closeModalOnBackdrop(event)">
+        <div class="relative w-full max-w-5xl bg-slate-900 rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
+            <button onclick="closeVideoModal()" class="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
-            <video id="videoPlayer" class="w-full h-auto max-h-[80vh]" controls controlsList="nodownload" oncontextmenu="return false" preload="metadata">
+            <video id="videoPlayer" class="w-full h-auto max-h-[85vh]" controls controlsList="nodownload" oncontextmenu="return false" preload="metadata">
                 <source src="myvideo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -191,7 +307,6 @@
     </div>
 
 <script>
-    // ඔයා දුන්න අලුත් Ad Links 2
     const adLinks = [
         "https://assistedtogether.com/nb8cskv4?key=574105cc7bdeb4a09e3b7705e2edd2ce",
         "https://assistedtogether.com/ffw3gbcqzg?key=761d6b3e051b1e4b3aaf5747d82dac44"
@@ -210,13 +325,12 @@
             updateUI();
         }
         
-        // Popunder Ad - Page load උනාම trigger කරන්න
         setTimeout(() => {
             if (!popunderTriggered) {
                 window.open('https://assistedtogether.com/cjkzueq7x?key=54eb39e1281b7ee732f53406158b286a', '_blank');
                 popunderTriggered = true;
             }
-        }, 2000); // තප්පර 2කට පස්සේ Popunder open වෙනවා
+        }, 2000);
     });
 
     function saveState() {
@@ -228,14 +342,9 @@
 
     function clickAd(adNum) {
         if (isUnlocked) return;
-        
         const adIndex = adNum - 1;
         if (adsClicked[adIndex]) return;
-
-        // Open ad in new tab
         window.open(adLinks[adIndex], '_blank');
-        
-        // Mark as clicked immediately
         adsClicked[adIndex] = true;
         saveState();
         updateUI();
@@ -257,13 +366,13 @@
         progressText.textContent = clickedCount + '/2 Ads';
 
         if (adsClicked[0]) {
-            adBtn1.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Completed ✓</span>';
+            adBtn1.innerHTML = '<svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Completed ✓</span>';
             adBtn1.disabled = true;
             adBtn1.classList.remove('ad-btn');
             adBtn1.classList.add('bg-green-600', 'cursor-not-allowed');
         }
         if (adsClicked[1]) {
-            adBtn2.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Completed ✓</span>';
+            adBtn2.innerHTML = '<svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Completed ✓</span>';
             adBtn2.disabled = true;
             adBtn2.classList.remove('ad-btn');
             adBtn2.classList.add('bg-green-600', 'cursor-not-allowed');
@@ -272,49 +381,40 @@
         if (clickedCount === 2) {
             isUnlocked = true;
             saveState();
-            
             statusBox.classList.remove('bg-slate-800/50', 'border-slate-700/50');
             statusBox.classList.add('bg-green-500/10', 'border-green-500/20');
             statusIcon.classList.remove('bg-amber-500/20');
             statusIcon.classList.add('bg-green-500/20');
-            statusIcon.innerHTML = '<svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>';
+            statusIcon.innerHTML = '<svg class="w-4 h-4 sm:w-5 sm:h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>';
             statusTitle.textContent = 'Video Unlocked!';
             statusTitle.classList.remove('text-white');
             statusTitle.classList.add('text-green-400');
             statusText.textContent = 'Video unlocked! Click to watch';
             statusText.classList.remove('text-slate-400');
             statusText.classList.add('text-green-300');
-            
             watchBtn.disabled = false;
-            watchBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Watch Video - Unlocked!</span>';
+            watchBtn.innerHTML = '<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Watch Video - Unlocked!</span>';
         }
     }
 
     function watchVideo() {
         if (!isUnlocked) return;
-        
         const modal = document.getElementById('videoModal');
         const video = document.getElementById('videoPlayer');
-        
         modal.classList.remove('hidden');
-        video.play().catch(err => {
-            console.log('Video autoplay prevented:', err);
-        });
+        video.play().catch(err => { console.log('Video autoplay prevented:', err); });
     }
 
     function closeVideoModal() {
         const modal = document.getElementById('videoModal');
         const video = document.getElementById('videoPlayer');
-        
         video.pause();
         video.currentTime = 0;
         modal.classList.add('hidden');
     }
 
     function closeModalOnBackdrop(event) {
-        if (event.target.id === 'videoModal') {
-            closeVideoModal();
-        }
+        if (event.target.id === 'videoModal') { closeVideoModal(); }
     }
 
     document.addEventListener('keydown', (e) => {
@@ -333,37 +433,45 @@
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('/sw.js')
-          .then((registration) => {
+     .then((registration) => {
                     console.log('Service Worker registered:', registration.scope);
                 })
-          .catch((error) => {
+     .catch((error) => {
                     console.log('Service Worker registration failed:', error);
                 });
         });
     }
 </script>
 
-<!-- Adsterra Scripts - ඔයා දුන්න අලුත් ඒවා -->
+<!-- Adsterra Scripts -->
 <script src="https://assistedtogether.com/48/d4/f8/48d4f8ec2e6bda2e1aef09bc574d956e.js"></script>
 <script src="https://assistedtogether.com/0f/b1/71/0fb171c04ed1f5172e0744cc4e857c17.js"></script>
+<script src="https://assistedtogether.com/da/46/28/da46283571c7c569d6c4e457c6a432d1.js"></script>
+<script src="https://assistedtogether.com/cf/73/15/cf731536ad920f944f814557496cf385.js"></script>
+
+<!-- Banner Script 1 -->
+<script async="async" data-cfasync="false" src="https://assistedtogether.com/4412dd429ac052637d0b14a28e010588/invoke.js"></script>
+
+<!-- Banner Script 2 -->
 <script async="async" data-cfasync="false" src="https://assistedtogether.com/834ac17d432e6da4a644ca83d5be1246/invoke.js"></script>
+
+<!-- Banner Script 3 - ඔයා දුන්න අලුත් එක -->
 <script>
   atOptions = {
-    'key' : 'a40353a9216fa88b94c20a3502b6f635',
+    'key' : 'bd74f6b6a360d6339947ff5018f8a3f6',
     'format' : 'iframe',
     'height' : 90,
     'width' : 728,
     'params' : {}
   };
 </script>
-<script src="https://assistedtogether.com/a40353a9216fa88b94c20a3502b6f635/invoke.js"></script>
+<script src="https://assistedtogether.com/bd74f6b6a360d6339947ff5018f8a3f6/invoke.js"></script>
 
 <!-- Popunder Ad Script -->
 <script>
 (function() {
     var popunderUrl = 'https://assistedtogether.com/cjkzueq7x?key=54eb39e1281b7ee732f53406158b286a';
     var popunderShown = false;
-    
     function openPopunder() {
         if (popunderShown) return;
         popunderShown = true;
@@ -373,8 +481,6 @@
             window.focus();
         }
     }
-    
-    // User click කරාම Popunder trigger වෙනවා
     document.addEventListener('click', function(e) {
         if (!popunderShown) {
             openPopunder();
