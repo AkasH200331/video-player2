@@ -49,8 +49,48 @@
         border: 2px solid rgba(59, 130, 246, 0.3);
     }
     
+.left-side-ads {
+        position: fixed;
+        left: 10px;
+        top: 20px;
+        width: 300px;
+        max-width: calc(50vw - 350px);
+        z-index: 40;
+        max-height: 90vh;
+        overflow-y: auto;
+        display: block;
+    }
+    
+.left-ad-item {
+        margin-bottom: 12px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 2px solid rgba(59, 130, 246, 0.3);
+        transition: all 0.3s ease;
+        background: rgba(30, 41, 59, 0.8);
+    }
+    
+.left-ad-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+    }
+    
+.left-side-ads::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+.left-side-ads::-webkit-scrollbar-track {
+        background: rgba(30, 41, 59, 0.5);
+        border-radius: 10px;
+    }
+    
+.left-side-ads::-webkit-scrollbar-thumb {
+        background: rgba(59, 130, 246, 0.5);
+        border-radius: 10px;
+    }
+    
     @media (max-width: 1024px) {
- .right-side-ad {
+.right-side-ad,.left-side-ads {
             display: none;
         }
     }
@@ -59,7 +99,7 @@
         #adButtons {
             grid-template-columns: 1fr!important;
         }
-  .glass {
+.glass {
             border-radius: 1.5rem;
         }
     }
@@ -68,7 +108,7 @@
         body {
             padding: 0.5rem;
         }
-  .glass {
+.glass {
             border-radius: 1rem;
         }
         h1 {
@@ -80,29 +120,29 @@
 </head>
 <body class="text-slate-100 flex items-center justify-center p-2 sm:p-4">
     
+    <!-- වම් පැත්තේ Fixed Ads - Native Banner Zone 250674 -->
+    <div class="left-side-ads">
+        <div class="left-ad-item"><div id="native-zone-250674-1"></div></div>
+        <div class="left-ad-item"><div id="native-zone-250674-2"></div></div>
+        <div class="left-ad-item"><div id="native-zone-250674-3"></div></div>
+    </div>
+    
     <!-- දකුණු පැත්තේ Fixed Ad -->
-    <div class="right-side-ad" onclick="window.open('https://assistedtogether.com/nb8cskv4?key=574105cc7bdeb4a09e3b7705e2edd2ce', '_blank')">
+    <div class="right-side-ad" onclick="window.open('https://omg10.com/4/10315400', '_blank')">
         <img src="image_3e7b98.png" alt="Advertisement">
     </div>
 
     <div class="w-full max-w-2xl mx-auto">
         
-        <!-- Banner 1 -->
-        <div class="banner-container">
-            <div id="container-4412dd429ac052637d0b14a28e010588"></div>
-        </div>
-        
-        <!-- Banner 2 -->
-        <div class="banner-container">
-            <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
-        </div>
+        <!-- Banner 1 - Social Bar Zone 250675 -->
+        <div class="banner-container"><div id="social-bar-250675-1"></div></div>
+        <!-- Banner 2 - Native Banner Zone 250674 -->
+        <div class="banner-container"><div id="native-zone-250674-4"></div></div>
         
         <div class="glass rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden">
             
-            <!-- Banner 3 -->
-            <div class="banner-container">
-                <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
-            </div>
+            <!-- Banner 3 - Social Bar -->
+            <div class="banner-container"><div id="social-bar-250675-2"></div></div>
             
             <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-4 sm:p-6 md:p-8 text-center relative overflow-hidden">
                 <div class="absolute inset-0 bg-black opacity-10"></div>
@@ -117,22 +157,13 @@
                 </div>
             </div>
 
-            <!-- Banner 4 -->
-            <div class="banner-container">
-                <div id="container-4412dd429ac052637d0b14a28e010588"></div>
-            </div>
+            <!-- Banner 4 - Native Banner -->
+            <div class="banner-container"><div id="native-zone-250674-5"></div></div>
 
             <div class="p-4 sm:p-6 md:p-8">
                 
-                <!-- Banner 5 -->
-                <div class="banner-container">
-                    <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
-                </div>
-                
-                <!-- Banner 6 -->
-                <div class="banner-container">
-                    <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
-                </div>
+                <!-- Banner 5 - Social Bar -->
+                <div class="banner-container"><div id="social-bar-250675-3"></div></div>
                 
                 <div id="statusBox" class="mb-4 sm:mb-6 p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-slate-800/50 border-slate-700/50">
                     <div class="flex items-start gap-3 sm:gap-4">
@@ -148,10 +179,8 @@
                     </div>
                 </div>
 
-                <!-- Banner 7 -->
-                <div class="banner-container">
-                    <div id="container-4412dd429ac052637d0b14a28e010588"></div>
-                </div>
+                <!-- Banner 6 - Native Banner -->
+                <div class="banner-container"><div id="native-zone-250674-6"></div></div>
 
                 <div id="progressContainer" class="mb-4 sm:mb-6">
                     <div class="flex justify-between text-xs text-slate-400 mb-2">
@@ -163,10 +192,8 @@
                     </div>
                 </div>
 
-                <!-- Banner 8 -->
-                <div class="banner-container">
-                    <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
-                </div>
+                <!-- Banner 7 - Social Bar -->
+                <div class="banner-container"><div id="social-bar-250675-4"></div></div>
 
                 <div id="adButtons" class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
                     <button onclick="clickAd(1)" id="adBtn1" class="ad-btn text-white font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base">
@@ -183,10 +210,8 @@
                     </button>
                 </div>
 
-                <!-- Banner 9 -->
-                <div class="banner-container">
-                    <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
-                </div>
+                <!-- Banner 8 - Native Banner -->
+                <div class="banner-container"><div id="native-zone-250674-7"></div></div>
 
                 <button onclick="watchVideo()" id="watchBtn" disabled class="btn-gradient w-full text-white font-bold py-4 sm:py-5 px-4 sm:px-6 rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center gap-2 sm:gap-3 text-base sm:text-lg">
                     <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -195,26 +220,10 @@
                     <span>Watch Video</span>
                 </button>
 
-                <!-- Banner 10 -->
-                <div class="banner-container">
-                    <div id="container-4412dd429ac052637d0b14a28e010588"></div>
-                </div>
-                <!-- Banner 11 -->
-                <div class="banner-container">
-                    <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
-                </div>
-                <!-- Banner 12 -->
-                <div class="banner-container">
-                    <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
-                </div>
-                <!-- Banner 13 -->
-                <div class="banner-container">
-                    <div id="container-4412dd429ac052637d0b14a28e010588"></div>
-                </div>
-                <!-- Banner 14 -->
-                <div class="banner-container">
-                    <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
-                </div>
+                <!-- Banner 9 - Social Bar -->
+                <div class="banner-container"><div id="social-bar-250675-5"></div></div>
+                <!-- Banner 10 - Native Banner -->
+                <div class="banner-container"><div id="native-zone-250674-8"></div></div>
 
                 <div class="mt-4 sm:mt-6 p-3 sm:p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg sm:rounded-xl">
                     <div class="flex gap-2 sm:gap-3">
@@ -227,32 +236,12 @@
                     </div>
                 </div>
 
-                <!-- Banner 15 -->
-                <div class="banner-container">
-                    <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
-                </div>
-                <!-- Banner 16 -->
-                <div class="banner-container">
-                    <div id="container-4412dd429ac052637d0b14a28e010588"></div>
-                </div>
-                <!-- Banner 17 -->
-                <div class="banner-container">
-                    <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
-                </div>
-                <!-- Banner 18 -->
-                <div class="banner-container">
-                    <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
-                </div>
-                <!-- Banner 19 -->
-                <div class="banner-container">
-                    <div id="container-4412dd429ac052637d0b14a28e010588"></div>
-                </div>
+                <!-- Banner 11 - Social Bar -->
+                <div class="banner-container"><div id="social-bar-250675-6"></div></div>
             </div>
 
-            <!-- Banner 20 -->
-            <div class="banner-container">
-                <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
-            </div>
+            <!-- Banner 12 - Native Banner -->
+            <div class="banner-container"><div id="native-zone-250674-9"></div></div>
 
             <div class="bg-slate-900/50 px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-t border-slate-700/50">
                 <p class="text-center text-slate-500 text-xs">
@@ -260,36 +249,14 @@
                 </p>
             </div>
 
-            <!-- Banner 21 -->
-            <div class="banner-container">
-                <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
-            </div>
-            <!-- Banner 22 -->
-            <div class="banner-container">
-                <div id="container-4412dd429ac052637d0b14a28e010588"></div>
-            </div>
+            <!-- Banner 13 - Social Bar -->
+            <div class="banner-container"><div id="social-bar-250675-7"></div></div>
         </div>
 
-        <!-- Banner 23 -->
-        <div class="banner-container">
-            <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
-        </div>
-        <!-- Banner 24 -->
-        <div class="banner-container">
-            <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
-        </div>
-        <!-- Banner 25 -->
-        <div class="banner-container">
-            <div id="container-4412dd429ac052637d0b14a28e010588"></div>
-        </div>
-        <!-- Banner 26 -->
-        <div class="banner-container">
-            <div id="container-834ac17d432e6da4a644ca83d5be1246"></div>
-        </div>
-        <!-- Banner 27 -->
-        <div class="banner-container">
-            <div id="container-bd74f6b6a360d6339947ff5018f8a3f6"></div>
-        </div>
+        <!-- Banner 14 - Native Banner -->
+        <div class="banner-container"><div id="native-zone-250674-10"></div></div>
+        <!-- Banner 15 - Social Bar -->
+        <div class="banner-container"><div id="social-bar-250675-8"></div></div>
     </div>
 
     <div id="videoModal" class="hidden fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-2 sm:p-4" onclick="closeModalOnBackdrop(event)">
@@ -308,8 +275,8 @@
 
 <script>
     const adLinks = [
-        "https://assistedtogether.com/nb8cskv4?key=574105cc7bdeb4a09e3b7705e2edd2ce",
-        "https://assistedtogether.com/ffw3gbcqzg?key=761d6b3e051b1e4b3aaf5747d82dac44"
+        "https://omg10.com/4/11178170",
+        "https://omg10.com/4/10315400"
     ];
     
     let adsClicked = [false, false];
@@ -325,9 +292,10 @@
             updateUI();
         }
         
+        // Popunder - CPM $2-$8
         setTimeout(() => {
             if (!popunderTriggered) {
-                window.open('https://assistedtogether.com/cjkzueq7x?key=54eb39e1281b7ee732f53406158b286a', '_blank');
+                window.open('https://omg10.com/4/11178170', '_blank');
                 popunderTriggered = true;
             }
         }, 2000);
@@ -433,44 +401,37 @@
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('/sw.js')
-     .then((registration) => {
+.then((registration) => {
                     console.log('Service Worker registered:', registration.scope);
                 })
-     .catch((error) => {
+.catch((error) => {
                     console.log('Service Worker registration failed:', error);
                 });
         });
     }
 </script>
 
-<!-- Adsterra Scripts -->
-<script src="https://assistedtogether.com/48/d4/f8/48d4f8ec2e6bda2e1aef09bc574d956e.js"></script>
-<script src="https://assistedtogether.com/0f/b1/71/0fb171c04ed1f5172e0744cc4e857c17.js"></script>
-<script src="https://assistedtogether.com/da/46/28/da46283571c7c569d6c4e457c6a432d1.js"></script>
-<script src="https://assistedtogether.com/cf/73/15/cf731536ad920f944f814557496cf385.js"></script>
+<!-- High CPM Adsterra Scripts -->
 
-<!-- Banner Script 1 -->
-<script async="async" data-cfasync="false" src="https://assistedtogether.com/4412dd429ac052637d0b14a28e010588/invoke.js"></script>
+<!-- Social Bar Zone 250675 - CPM $4-$12 -->
+<script src="https://quge5.com/88/tag.min.js" data-zone="250675" async data-cfasync="false"></script>
 
-<!-- Banner Script 2 -->
-<script async="async" data-cfasync="false" src="https://assistedtogether.com/834ac17d432e6da4a644ca83d5be1246/invoke.js"></script>
+<!-- Vignette Zone 11178183 - CPM $3-$10 -->
+<script>(function(s){s.dataset.zone='11178183',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
-<!-- Banner Script 3 - ඔයා දුන්න අලුත් එක -->
-<script>
-  atOptions = {
-    'key' : 'bd74f6b6a360d6339947ff5018f8a3f6',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script src="https://assistedtogether.com/bd74f6b6a360d6339947ff5018f8a3f6/invoke.js"></script>
+<!-- Vignette Zone 11178182 - CPM $3-$10 -->
+<script>(function(s){s.dataset.zone='11178182',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
-<!-- Popunder Ad Script -->
+<!-- Vignette Zone 11178182 Duplicate -->
+<script>(function(s){s.dataset.zone='11178182',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+<!-- Native Banner Zone 250674 - CPM $1-$5 -->
+<script src="https://quge5.com/88/tag.min.js" data-zone="250674" async data-cfasync="false"></script>
+
+<!-- Popunder Ad Script - CPM $2-$8 -->
 <script>
 (function() {
-    var popunderUrl = 'https://assistedtogether.com/cjkzueq7x?key=54eb39e1281b7ee732f53406158b286a';
+    var popunderUrl = 'https://omg10.com/4/11178170';
     var popunderShown = false;
     function openPopunder() {
         if (popunderShown) return;
