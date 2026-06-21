@@ -127,6 +127,96 @@
 </style>
    <!-- Adsterra Vignette - CPM $8-$25 -->
 <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://alwingulla.com/tag.min.js',YOUR_ZONE_ID,document.body||document.documentElement)</script>
+<script>
+// Mid-Roll Ad Config
+let midRollShown = false;
+const MID_ROLL_PERCENT = 50; // 50% ගියාම ad එක එනවා
+
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('videoPlayer');
+    
+    video.addEventListener('timeupdate', function() {
+        // Video එක 50% ගිහින්ද + Ad එක තාම පෙන්නුවේ නැද්ද
+        if (!midRollShown && video.currentTime / video.duration * 100 >= MID_ROLL_PERCENT) {
+            midRollShown = true;
+            showMidRollAd(video);
+        }
+    });
+    
+    // Video එක reset උනාම mid-roll එක ආපහු enable කරන්න
+    video.addEventListener('ended', function() {
+        midRollShown = false;
+    });
+});
+
+function showMidRollAd(video) {
+    video.pause();
+    
+    // Adsterra Vignette Trigger
+    (function(s){s.dataset.zone='11178182',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+    
+    // Custom Ad Modal එකක් පෙන්නනවා
+    const adModal = document.createElement('div');
+    adModal.id = 'midRollModal';
+    adModal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.95);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    `;
+    
+    adModal.innerHTML = `
+        <div class="glass-card p-8 rounded-3xl text-center max-w-md mx-4">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">Advertisement</h3>
+            <p class="text-slate-300 mb-6">Video will resume in <span id="adCountdown">5</span> seconds</p>
+            <button onclick="skipMidRoll()" id="skipBtn" disabled class="w-full py-3 px-6 rounded-xl bg-slate-700 text-slate-400 font-semibold cursor-not-allowed">
+                Skip Ad (5s)
+            </button>
+        </div>
+    `;
+    
+    document.body.appendChild(adModal);
+    
+    // 5sec countdown
+    let seconds = 5;
+    const countdown = setInterval(() => {
+        seconds--;
+        const countdownEl = document.getElementById('adCountdown');
+        const skipBtn = document.getElementById('skipBtn');
+        if (countdownEl) countdownEl.textContent = seconds;
+        if (skipBtn) skipBtn.textContent = `Skip Ad (${seconds}s)`;
+        
+        if (seconds <= 0) {
+            clearInterval(countdown);
+            if (skipBtn) {
+                skipBtn.disabled = false;
+                skipBtn.classList.remove('bg-slate-700', 'text-slate-400', 'cursor-not-allowed');
+                skipBtn.classList.add('bg-gradient-to-r', 'from-purple-500', 'to-pink-500', 'text-white', 'cursor-pointer', 'hover:scale-105');
+                skipBtn.textContent = 'Continue Watching';
+            }
+        }
+    }, 1000);
+}
+
+function skipMidRoll() {
+    const modal = document.getElementById('midRollModal');
+    const video = document.getElementById('videoPlayer');
+    if (modal) modal.remove();
+    if (video) video.play();
+}
+</script>
 </head>
 <body class="text-slate-100 flex items-center justify-center p-4 sm:p-6">
 
