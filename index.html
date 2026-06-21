@@ -1,273 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <script type="text/javascript" src="//cdn.tsyndicate.com/sdk/v1/p.js" data-ts-spot="ac15cdbc4f104864872fe6467547b367" data-ts-extid="{extid}" async defer></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Video Lock Box - Watch Unlocked Video</title>
+<title>Premium Video Access</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-    * { font-family: 'Noto Sans Sinhala', 'Inter', sans-serif; margin: 0; padding: 0; }
-    body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); min-height: 100vh; }
-.glass { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(148, 163, 184, 0.1); }
-.btn-gradient { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); transition: all 0.3s ease; }
-.btn-gradient:hover:not(:disabled) { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4); }
-.btn-gradient:disabled { opacity: 0.5; cursor: not-allowed; }
-.ad-btn { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); transition: all 0.3s ease; }
-.ad-btn:hover:not(:disabled) { background: linear-gradient(135deg, #d97706 0%, #b45309 100%); transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4); }
-.ad-btn:disabled { background: #16a34a; cursor: not-allowed; }
-.pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity:.7; } }
-.progress-bar { transition: width 0.5s ease; }
-    #videoModal { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-    video { outline: none; }
-    video::-webkit-media-controls-enclosure { border-radius: 12px; }
-.banner-container { margin: 6px 0; display: flex; justify-content: center; min-height: 50px; }
+    * { font-family: 'Poppins', 'Noto Sans Sinhala', sans-serif; margin: 0; padding: 0; }
+    body { 
+        background: #0a0e27;
+        background-image: 
+            radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.15) 0px, transparent 50%),
+            radial-gradient(at 97% 21%, hsla(256, 98%, 72%, 0.1) 0px, transparent 50%),
+            radial-gradient(at 52% 99%, hsla(355, 98%, 61%, 0.08) 0px, transparent 50%);
+        min-height: 100vh; 
+    }
     
-.right-side-ad {
-        position: fixed;
-        right: 10px;
-        top: 20px;
-        width: 300px;
-        max-width: calc(50vw - 350px);
-        z-index: 40;
-        cursor: pointer;
+   .glass-card { 
+        background: rgba(17, 25, 40, 0.75); 
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    }
+    
+   .gradient-border {
+        position: relative;
+        background: linear-gradient(#111927, #111927) padding-box,
+                    linear-gradient(135deg, #667eea 0%, #764ba2 100%) border-box;
+        border: 2px solid transparent;
+    }
+    
+   .btn-premium { 
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+    }
+   .btn-premium:hover:not(:disabled) { 
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px 0 rgba(116, 79, 168, 0.9);
+    }
+   .btn-premium:disabled { 
+        opacity: 0.4; 
+        cursor: not-allowed;
+        transform: none;
+    }
+    
+   .ad-btn-pro { 
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
         transition: all 0.3s ease;
-        display: block;
+        box-shadow: 0 4px 15px 0 rgba(245, 87, 108, 0.4);
+    }
+   .ad-btn-pro:hover:not(:disabled) { 
+        background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 6px 20px 0 rgba(245, 87, 108, 0.6);
+    }
+   .ad-btn-pro:disabled { 
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        cursor: not-allowed;
+        box-shadow: 0 4px 15px 0 rgba(16, 185, 129, 0.4);
     }
     
-.right-side-ad:hover {
-        transform: translateX(-5px);
-        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+   .glow-pulse {
+        animation: glowPulse 2s ease-in-out infinite alternate;
+    }
+    @keyframes glowPulse {
+        from { box-shadow: 0 0 20px rgba(102, 126, 234, 0.4); }
+        to { box-shadow: 0 0 30px rgba(102, 126, 234, 0.8), 0 0 40px rgba(118, 75, 162, 0.4); }
     }
     
-.right-side-ad img {
-        width: 100%;
-        border-radius: 12px;
-        border: 2px solid rgba(59, 130, 246, 0.3);
+   .progress-glow {
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        background-size: 200% 100%;
+        animation: shimmer 2s linear infinite;
+    }
+    @keyframes shimmer {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
     }
     
-.left-side-ads {
-        position: fixed;
-        left: 10px;
-        top: 20px;
-        width: 300px;
-        max-width: calc(50vw - 350px);
-        z-index: 40;
-        max-height: 90vh;
-        overflow-y: auto;
-        display: block;
+    #videoModal { 
+        backdrop-filter: blur(12px); 
+        -webkit-backdrop-filter: blur(12px);
+        background: rgba(0, 0, 0, 0.95);
     }
     
-.left-ad-item {
-        margin-bottom: 12px;
-        border-radius: 12px;
+   .ad-container { 
+        margin: 12px 0; 
+        display: flex; 
+        justify-content: center;
+        min-height: 90px;
+        border-radius: 16px;
         overflow: hidden;
-        border: 2px solid rgba(59, 130, 246, 0.3);
-        transition: all 0.3s ease;
-        background: rgba(30, 41, 59, 0.8);
     }
     
-.left-ad-item:hover {
-        transform: translateX(5px);
-        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+   .step-indicator {
+        position: relative;
+    }
+   .step-indicator::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 3px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border-radius: 2px;
     }
     
-.left-side-ads::-webkit-scrollbar {
-        width: 6px;
+   .floating {
+        animation: floating 3s ease-in-out infinite;
     }
-    
-.left-side-ads::-webkit-scrollbar-track {
-        background: rgba(30, 41, 59, 0.5);
-        border-radius: 10px;
-    }
-    
-.left-side-ads::-webkit-scrollbar-thumb {
-        background: rgba(59, 130, 246, 0.5);
-        border-radius: 10px;
-    }
-    
-    @media (max-width: 1024px) {
-.right-side-ad,.left-side-ads {
-            display: none;
-        }
+    @keyframes floating {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
     }
     
     @media (max-width: 768px) {
-        #adButtons {
-            grid-template-columns: 1fr!important;
-        }
-.glass {
-            border-radius: 1.5rem;
-        }
-    }
-    
-    @media (max-width: 640px) {
-        body {
-            padding: 0.5rem;
-        }
-.glass {
-            border-radius: 1rem;
-        }
-        h1 {
-            font-size: 1.75rem!important;
-        }
+       .glass-card { border-radius: 24px; }
     }
 </style>
-   <meta name="monetag" content="c5eb4160bfa92ba35af5f80545b8cd6e">
 </head>
-<body class="text-slate-100 flex items-center justify-center p-2 sm:p-4">
-    
-    <!-- වම් පැත්තේ Fixed Ads - Native Banner Zone 250674 -->
-    <div class="left-side-ads">
-        <div class="left-ad-item"><div id="native-zone-250674-1"></div></div>
-        <div class="left-ad-item"><div id="native-zone-250674-2"></div></div>
-        <div class="left-ad-item"><div id="native-zone-250674-3"></div></div>
-    </div>
-    
-    <!-- දකුණු පැත්තේ Fixed Ad -->
-    <div class="right-side-ad" onclick="window.open('https://omg10.com/4/10315400', '_blank')">
-        <img src="image_3e7b98.png" alt="Advertisement">
-    </div>
+<body class="text-slate-100 flex items-center justify-center p-4 sm:p-6">
 
-    <div class="w-full max-w-2xl mx-auto">
+    <div class="w-full max-w-3xl mx-auto">
         
-        <!-- Banner 1 - Social Bar Zone 250675 -->
-        <div class="banner-container"><div id="social-bar-250675-1"></div></div>
-        <!-- Banner 2 - Native Banner Zone 250674 -->
-        <div class="banner-container"><div id="native-zone-250674-4"></div></div>
+        <!-- Top Banner Ad -->
+        <div class="ad-container">
+            <div id="container-6e2df2c2005b57ae387350c8b8d38fad"></div>
+        </div>
         
-        <div class="glass rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden">
+        <div class="glass-card rounded-[2rem] shadow-2xl overflow-hidden">
             
-            <!-- Banner 3 - Social Bar -->
-            <div class="banner-container"><div id="social-bar-250675-2"></div></div>
-            
-            <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-4 sm:p-6 md:p-8 text-center relative overflow-hidden">
-                <div class="absolute inset-0 bg-black opacity-10"></div>
+            <!-- Header Section -->
+            <div class="relative bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 p-8 sm:p-10 text-center overflow-hidden">
+                <div class="absolute inset-0 opacity-20">
+                    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+                </div>
                 <div class="relative z-10">
-                    <div class="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-xl sm:rounded-2xl mb-3 sm:mb-4 backdrop-blur-sm">
-                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-white/10 rounded-3xl mb-5 backdrop-blur-md border border-white/20 floating">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                         </svg>
                     </div>
-                    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">Video Lock Box</h1>
-                    <p class="text-blue-100 text-xs sm:text-sm md:text-base">වීඩියෝව නැරඹීමට පහත පියවර සම්පූර්ණ කරන්න</p>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-3 tracking-tight">Premium Access</h1>
+                    <p class="text-indigo-100 text-sm sm:text-base font-medium">Unlock exclusive content in seconds</p>
                 </div>
             </div>
 
-            <!-- Banner 4 - Native Banner -->
-            <div class="banner-container"><div id="native-zone-250674-5"></div></div>
-
-            <div class="p-4 sm:p-6 md:p-8">
+            <div class="p-6 sm:p-10">
                 
-                <!-- Banner 5 - Social Bar -->
-                <div class="banner-container"><div id="social-bar-250675-3"></div></div>
+                <!-- Middle Banner Ad -->
+                <div class="ad-container">
+                    <div id="container-6e2df2c2005b57ae387350c8b8d38fad"></div>
+                </div>
                 
-                <div id="statusBox" class="mb-4 sm:mb-6 p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-slate-800/50 border-slate-700/50">
-                    <div class="flex items-start gap-3 sm:gap-4">
-                        <div id="statusIcon" class="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-amber-500/20 flex items-center justify-center">
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <!-- Status Card -->
+                <div id="statusBox" class="mb-8 p-6 rounded-2xl gradient-border">
+                    <div class="flex items-start gap-4">
+                        <div id="statusIcon" class="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center border border-amber-500/30">
+                            <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                             </svg>
                         </div>
                         <div class="flex-1">
-                            <h3 id="statusTitle" class="text-base sm:text-lg font-semibold text-white mb-1">Video Locked</h3>
-                            <p id="statusText" class="text-slate-400 text-xs sm:text-sm">වීඩියෝව Unlock කිරීමට Ad 2ක් click කරන්න</p>
+                            <h3 id="statusTitle" class="text-xl font-bold text-white mb-2">Content Locked</h3>
+                            <p id="statusText" class="text-slate-300 text-sm leading-relaxed">Complete 2 quick steps to unlock premium video access</p>
+                        </div>
+                        <div class="step-indicator">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
+                                <span id="stepNumber">1</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Banner 6 - Native Banner -->
-                <div class="banner-container"><div id="native-zone-250674-6"></div></div>
-
-                <div id="progressContainer" class="mb-4 sm:mb-6">
-                    <div class="flex justify-between text-xs text-slate-400 mb-2">
-                        <span>Unlock Progress</span>
-                        <span id="progressText">0/2 Ads</span>
+                <!-- Progress Bar -->
+                <div id="progressContainer" class="mb-8">
+                    <div class="flex justify-between text-sm text-slate-400 mb-3">
+                        <span class="font-medium">Verification Progress</span>
+                        <span id="progressText" class="font-bold text-indigo-400">0/2 Complete</span>
                     </div>
-                    <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
-                        <div id="progressBar" class="progress-bar h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full" style="width: 0%"></div>
+                    <div class="w-full h-3 bg-slate-800/50 rounded-full overflow-hidden backdrop-blur-sm border border-slate-700/50">
+                        <div id="progressBar" class="h-full rounded-full transition-all duration-700 ease-out" style="width: 0%"></div>
                     </div>
                 </div>
 
-                <!-- Banner 7 - Social Bar -->
-                <div class="banner-container"><div id="social-bar-250675-4"></div></div>
-
-                <div id="adButtons" class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
-                    <button onclick="clickAd(1)" id="adBtn1" class="ad-btn text-white font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                        <span>Advertisement 1</span>
+                <!-- Action Buttons -->
+                <div id="adButtons" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <button onclick="clickAd(1)" id="adBtn1" class="ad-btn-pro text-white font-bold py-5 px-6 rounded-2xl shadow-lg flex items-center justify-center gap-3 text-base group">
+                        <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-xs opacity-80">Step 1</div>
+                            <div>Quick Verify</div>
+                        </div>
                     </button>
-                    <button onclick="clickAd(2)" id="adBtn2" class="ad-btn text-white font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                        <span>Advertisement 2</span>
+                    <button onclick="clickAd(2)" id="adBtn2" class="ad-btn-pro text-white font-bold py-5 px-6 rounded-2xl shadow-lg flex items-center justify-center gap-3 text-base group">
+                        <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-xs opacity-80">Step 2</div>
+                            <div>Final Check</div>
+                        </div>
                     </button>
                 </div>
 
-                <!-- Banner 8 - Native Banner -->
-                <div class="banner-container"><div id="native-zone-250674-7"></div></div>
-
-                <button onclick="watchVideo()" id="watchBtn" disabled class="btn-gradient w-full text-white font-bold py-4 sm:py-5 px-4 sm:px-6 rounded-lg sm:rounded-xl shadow-lg flex items-center justify-center gap-2 sm:gap-3 text-base sm:text-lg">
-                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <!-- Watch Button -->
+                <button onclick="watchVideo()" id="watchBtn" disabled class="btn-premium w-full text-white font-bold py-6 px-6 rounded-2xl shadow-xl flex items-center justify-center gap-4 text-lg glow-pulse">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                     </svg>
-                    <span>Watch Video</span>
+                    <span>Watch Premium Video</span>
                 </button>
 
-                <!-- Banner 9 - Social Bar -->
-                <div class="banner-container"><div id="social-bar-250675-5"></div></div>
-                <!-- Banner 10 - Native Banner -->
-                <div class="banner-container"><div id="native-zone-250674-8"></div></div>
-
-                <div class="mt-4 sm:mt-6 p-3 sm:p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg sm:rounded-xl">
-                    <div class="flex gap-2 sm:gap-3">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <p class="text-xs text-blue-300 leading-relaxed">
-                             කරුණාකර Ad 2ක් click කරන්න. Click කරාම auto unlock වෙනවා.
-                        </p>
+                <!-- Info Box -->
+                <div class="mt-8 p-5 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 rounded-2xl backdrop-blur-sm">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-indigo-300 mb-1">How it works</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Complete both verification steps above. Your access will be instantly unlocked with no downloads required.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Banner 11 - Social Bar -->
-                <div class="banner-container"><div id="social-bar-250675-6"></div></div>
             </div>
 
-            <!-- Banner 12 - Native Banner -->
-            <div class="banner-container"><div id="native-zone-250674-9"></div></div>
-
-            <div class="bg-slate-900/50 px-4 sm:px-6 md:px-8 py-3 sm:py-4 border-t border-slate-700/50">
-                <p class="text-center text-slate-500 text-xs">
-                    © 2024 Video Lock Box. All rights reserved.
-                </p>
+            <!-- Footer -->
+            <div class="bg-slate-900/50 px-8 py-5 border-t border-slate-700/30">
+                <div class="flex items-center justify-between text-xs text-slate-500">
+                    <p>© 2026 Premium Access. Secure & Encrypted.</p>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>SSL Secured</span>
+                    </div>
+                </div>
             </div>
-
-            <!-- Banner 13 - Social Bar -->
-            <div class="banner-container"><div id="social-bar-250675-7"></div></div>
         </div>
 
-        <!-- Banner 14 - Native Banner -->
-        <div class="banner-container"><div id="native-zone-250674-10"></div></div>
-        <!-- Banner 15 - Social Bar -->
-        <div class="banner-container"><div id="social-bar-250675-8"></div></div>
+        <!-- Bottom Banner Ad -->
+        <div class="ad-container mt-4">
+            <div id="container-6e2df2c2005b57ae387350c8b8d38fad"></div>
+        </div>
     </div>
 
-    <div id="videoModal" class="hidden fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-2 sm:p-4" onclick="closeModalOnBackdrop(event)">
-        <div class="relative w-full max-w-5xl bg-slate-900 rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
-            <button onclick="closeVideoModal()" class="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <!-- Video Modal -->
+    <div id="videoModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" onclick="closeModalOnBackdrop(event)">
+        <div class="relative w-full max-w-6xl bg-slate-900 rounded-3xl shadow-2xl overflow-hidden border border-slate-700/50" onclick="event.stopPropagation()">
+            <button onclick="closeVideoModal()" class="absolute top-4 right-4 z-10 w-12 h-12 bg-black/60 hover:bg-black/80 text-white rounded-2xl flex items-center justify-center transition-all duration-200 backdrop-blur-md border border-white/10 hover:scale-110">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
-            <video id="videoPlayer" class="w-full h-auto max-h-[85vh]" controls controlsList="nodownload" oncontextmenu="return false" preload="metadata">
+            <video id="videoPlayer" class="w-full h-auto max-h-[90vh]" controls controlsList="nodownload" oncontextmenu="return false" preload="metadata">
                 <source src="myvideo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -276,34 +281,25 @@
 
 <script>
     const adLinks = [
-        "https://omg10.com/4/11178170",
-        "https://omg10.com/4/10315400"
+        "https://assistedtogether.com/u0mia7z9z?key=b51051d23f4f416a4ac5b979c619fa77",
+        "https://assistedtogether.com/mzwmuxf9qv?key=8ce22d1a0f551f6fec2fe303bc5e2f20"
     ];
     
     let adsClicked = [false, false];
     let isUnlocked = false;
-    let popunderTriggered = false;
 
     window.addEventListener('DOMContentLoaded', () => {
-        const stored = localStorage.getItem('videoLockBoxState');
+        const stored = localStorage.getItem('premiumVideoLockState');
         if (stored) {
             const state = JSON.parse(stored);
             adsClicked = state.adsClicked || [false, false];
             isUnlocked = state.isUnlocked || false;
             updateUI();
         }
-        
-        // Popunder - CPM $2-$8
-        setTimeout(() => {
-            if (!popunderTriggered) {
-                window.open('https://omg10.com/4/11178170', '_blank');
-                popunderTriggered = true;
-            }
-        }, 2000);
     });
 
     function saveState() {
-        localStorage.setItem('videoLockBoxState', JSON.stringify({
+        localStorage.setItem('premiumVideoLockState', JSON.stringify({
             adsClicked: adsClicked,
             isUnlocked: isUnlocked
         }));
@@ -330,39 +326,40 @@
         const watchBtn = document.getElementById('watchBtn');
         const adBtn1 = document.getElementById('adBtn1');
         const adBtn2 = document.getElementById('adBtn2');
+        const stepNumber = document.getElementById('stepNumber');
 
         progressBar.style.width = (clickedCount / 2 * 100) + '%';
-        progressText.textContent = clickedCount + '/2 Ads';
+        progressBar.classList.add('progress-glow');
+        progressText.textContent = clickedCount + '/2 Complete';
+        stepNumber.textContent = clickedCount + 1;
 
         if (adsClicked[0]) {
-            adBtn1.innerHTML = '<svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Completed ✓</span>';
+            adBtn1.innerHTML = '<div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div><div class="text-left"><div class="text-xs opacity-80">Step 1</div><div>Verified ✓</div></div>';
             adBtn1.disabled = true;
-            adBtn1.classList.remove('ad-btn');
-            adBtn1.classList.add('bg-green-600', 'cursor-not-allowed');
         }
         if (adsClicked[1]) {
-            adBtn2.innerHTML = '<svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Completed ✓</span>';
+            adBtn2.innerHTML = '<div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div><div class="text-left"><div class="text-xs opacity-80">Step 2</div><div>Verified ✓</div></div>';
             adBtn2.disabled = true;
-            adBtn2.classList.remove('ad-btn');
-            adBtn2.classList.add('bg-green-600', 'cursor-not-allowed');
         }
 
         if (clickedCount === 2) {
             isUnlocked = true;
             saveState();
-            statusBox.classList.remove('bg-slate-800/50', 'border-slate-700/50');
-            statusBox.classList.add('bg-green-500/10', 'border-green-500/20');
-            statusIcon.classList.remove('bg-amber-500/20');
-            statusIcon.classList.add('bg-green-500/20');
-            statusIcon.innerHTML = '<svg class="w-4 h-4 sm:w-5 sm:h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>';
-            statusTitle.textContent = 'Video Unlocked!';
+            statusBox.classList.remove('gradient-border');
+            statusBox.classList.add('bg-gradient-to-br', 'from-emerald-500/10', 'to-green-500/10', 'border-emerald-500/30');
+            statusIcon.classList.remove('from-amber-500/20', 'to-orange-500/20', 'border-amber-500/30');
+            statusIcon.classList.add('from-emerald-500/20', 'to-green-500/20', 'border-emerald-500/30');
+            statusIcon.innerHTML = '<svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>';
+            statusTitle.textContent = 'Access Granted!';
             statusTitle.classList.remove('text-white');
-            statusTitle.classList.add('text-green-400');
-            statusText.textContent = 'Video unlocked! Click to watch';
-            statusText.classList.remove('text-slate-400');
-            statusText.classList.add('text-green-300');
+            statusTitle.classList.add('text-emerald-400');
+            statusText.textContent = 'Premium content unlocked. Click below to start watching.';
+            statusText.classList.remove('text-slate-300');
+            statusText.classList.add('text-emerald-300');
+            stepNumber.textContent = '✓';
             watchBtn.disabled = false;
-            watchBtn.innerHTML = '<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Watch Video - Unlocked!</span>';
+            watchBtn.classList.remove('glow-pulse');
+            watchBtn.innerHTML = '<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Watch Now - Premium Quality</span>';
         }
     }
 
@@ -397,59 +394,16 @@
     });
 </script>
 
-<!-- Service Worker Registration -->
-<script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js')
-.then((registration) => {
-                    console.log('Service Worker registered:', registration.scope);
-                })
-.catch((error) => {
-                    console.log('Service Worker registration failed:', error);
-                });
-        });
-    }
-</script>
+<!-- Adsterra Scripts -->
 
-<!-- High CPM Adsterra Scripts -->
+<!-- Banner Ad 6e2df2c2005b57ae387350c8b8d38fad -->
+<script async="async" data-cfasync="false" src="https://assistedtogether.com/6e2df2c2005b57ae387350c8b8d38fad/invoke.js"></script>
 
-<!-- Social Bar Zone 250675 - CPM $4-$12 -->
-<script src="https://quge5.com/88/tag.min.js" data-zone="250675" async data-cfasync="false"></script>
+<!-- Script 1 -->
+<script src="https://assistedtogether.com/b5/55/0a/b5550aed167b70315aa4b506e2cdb81f.js"></script>
 
-<!-- Vignette Zone 11178183 - CPM $3-$10 -->
-<script>(function(s){s.dataset.zone='11178183',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
-<!-- Vignette Zone 11178182 - CPM $3-$10 -->
-<script>(function(s){s.dataset.zone='11178182',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
-<!-- Vignette Zone 11178182 Duplicate -->
-<script>(function(s){s.dataset.zone='11178182',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
-<!-- Native Banner Zone 250674 - CPM $1-$5 -->
-<script src="https://quge5.com/88/tag.min.js" data-zone="250674" async data-cfasync="false"></script>
-
-<!-- Popunder Ad Script - CPM $2-$8 -->
-<script>
-(function() {
-    var popunderUrl = 'https://omg10.com/4/11178170';
-    var popunderShown = false;
-    function openPopunder() {
-        if (popunderShown) return;
-        popunderShown = true;
-        var popunder = window.open(popunderUrl, '_blank');
-        if (popunder) {
-            popunder.blur();
-            window.focus();
-        }
-    }
-    document.addEventListener('click', function(e) {
-        if (!popunderShown) {
-            openPopunder();
-        }
-    }, { once: true });
-})();
-</script>
+<!-- Script 2 -->
+<script src="https://assistedtogether.com/20/0c/a4/200ca493ec4a6318e0f98ccfe85b21b8.js"></script>
 
 </body>
 </html>
