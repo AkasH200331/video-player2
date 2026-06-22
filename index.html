@@ -1,516 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <script async="async" data-cfasync="false" src="https://assistedtogether.com/9d11acc1b902144daca4f9db22be1a35/invoke.js"></script>
-<div id="container-9d11acc1b902144daca4f9db22be1a35"></div>
-<script async="async" data-cfasync="false" src="https://assistedtogether.com/9d11acc1b902144daca4f9db22be1a35/invoke.js"></script>
-<div id="container-9d11acc1b902144daca4f9db22be1a35"></div>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Video Access</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-    * { font-family: 'Poppins', 'Noto Sans Sinhala', sans-serif; margin: 0; padding: 0; }
-    body { 
-        background: #0a0e27;
-        background-image: 
-            radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.15) 0px, transparent 50%),
-            radial-gradient(at 97% 21%, hsla(256, 98%, 72%, 0.1) 0px, transparent 50%),
-            radial-gradient(at 52% 99%, hsla(355, 98%, 61%, 0.08) 0px, transparent 50%);
-        min-height: 100vh; 
-    }
-    
-   .glass-card { 
-        background: rgba(17, 25, 40, 0.75); 
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
-        border: 1px solid rgba(255, 255, 255, 0.125);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    }
-    
-   .gradient-border {
-        position: relative;
-        background: linear-gradient(#111927, #111927) padding-box,
-                    linear-gradient(135deg, #667eea 0%, #764ba2 100%) border-box;
-        border: 2px solid transparent;
-    }
-    
-   .btn-premium { 
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
-    }
-   .btn-premium:hover:not(:disabled) { 
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px 0 rgba(116, 79, 168, 0.9);
-    }
-   .btn-premium:disabled { 
-        opacity: 0.4; 
-        cursor: not-allowed;
-        transform: none;
-    }
-    
-   .ad-btn-pro { 
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px 0 rgba(245, 87, 108, 0.4);
-    }
-   .ad-btn-pro:hover:not(:disabled) { 
-        background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
-        transform: translateY(-2px) scale(1.02);
-        box-shadow: 0 6px 20px 0 rgba(245, 87, 108, 0.6);
-    }
-   .ad-btn-pro:disabled { 
-        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-        cursor: not-allowed;
-        box-shadow: 0 4px 15px 0 rgba(16, 185, 129, 0.4);
-    }
-    
-   .glow-pulse {
-        animation: glowPulse 2s ease-in-out infinite alternate;
-    }
-    @keyframes glowPulse {
-        from { box-shadow: 0 0 20px rgba(102, 126, 234, 0.4); }
-        to { box-shadow: 0 0 30px rgba(102, 126, 234, 0.8), 0 0 40px rgba(118, 75, 162, 0.4); }
-    }
-    
-   .progress-glow {
-        background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-        background-size: 200% 100%;
-        animation: shimmer 2s linear infinite;
-    }
-    @keyframes shimmer {
-        0% { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
-    }
-    
-    #videoModal { 
-        backdrop-filter: blur(12px); 
-        -webkit-backdrop-filter: blur(12px);
-        background: rgba(0, 0, 0, 0.95);
-    }
-    
-   .ad-container { 
-        margin: 12px 0; 
-        display: flex; 
-        justify-content: center;
-        min-height: 90px;
-        border-radius: 16px;
-        overflow: hidden;
-    }
-    
-   .step-indicator {
-        position: relative;
-    }
-   .step-indicator::after {
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 40px;
-        height: 3px;
-        background: linear-gradient(90deg, #667eea, #764ba2);
-        border-radius: 2px;
-    }
-    
-   .floating {
-        animation: floating 3s ease-in-out infinite;
-    }
-    @keyframes floating {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-    }
-    
-    @media (max-width: 768px) {
-       .glass-card { border-radius: 24px; }
-    }
-</style>
-   <!-- Adsterra Vignette - CPM $8-$25 -->
-<script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://alwingulla.com/tag.min.js',YOUR_ZONE_ID,document.body||document.documentElement)</script>
-<script>
-// Mid-Roll Ad Config
-let midRollShown = false;
-const MID_ROLL_PERCENT = 50; // 50% ගියාම ad එක එනවා
-
-document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('videoPlayer');
-    
-    video.addEventListener('timeupdate', function() {
-        // Video එක 50% ගිහින්ද + Ad එක තාම පෙන්නුවේ නැද්ද
-        if (!midRollShown && video.currentTime / video.duration * 100 >= MID_ROLL_PERCENT) {
-            midRollShown = true;
-            showMidRollAd(video);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Video - Age Verification Required</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
-    });
-    
-    // Video එක reset උනාම mid-roll එක ආපහු enable කරන්න
-    video.addEventListener('ended', function() {
-        midRollShown = false;
-    });
-});
-
-function showMidRollAd(video) {
-    video.pause();
-    
-    // Adsterra Vignette Trigger
-    (function(s){s.dataset.zone='11178182',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
-    
-    // Custom Ad Modal එකක් පෙන්නනවා
-    const adModal = document.createElement('div');
-    adModal.id = 'midRollModal';
-    adModal.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.95);
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    `;
-    
-    adModal.innerHTML = `
-        <div class="glass-card p-8 rounded-3xl text-center max-w-md mx-4">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-                </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-2">Advertisement</h3>
-            <p class="text-slate-300 mb-6">Video will resume in <span id="adCountdown">5</span> seconds</p>
-            <button onclick="skipMidRoll()" id="skipBtn" disabled class="w-full py-3 px-6 rounded-xl bg-slate-700 text-slate-400 font-semibold cursor-not-allowed">
-                Skip Ad (5s)
-            </button>
-        </div>
-    `;
-    
-    document.body.appendChild(adModal);
-    
-    // 5sec countdown
-    let seconds = 5;
-    const countdown = setInterval(() => {
-        seconds--;
-        const countdownEl = document.getElementById('adCountdown');
-        const skipBtn = document.getElementById('skipBtn');
-        if (countdownEl) countdownEl.textContent = seconds;
-        if (skipBtn) skipBtn.textContent = `Skip Ad (${seconds}s)`;
-        
-        if (seconds <= 0) {
-            clearInterval(countdown);
-            if (skipBtn) {
-                skipBtn.disabled = false;
-                skipBtn.classList.remove('bg-slate-700', 'text-slate-400', 'cursor-not-allowed');
-                skipBtn.classList.add('bg-gradient-to-r', 'from-purple-500', 'to-pink-500', 'text-white', 'cursor-pointer', 'hover:scale-105');
-                skipBtn.textContent = 'Continue Watching';
-            }
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(0,0,0,0.8);
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            border: 1px solid #333;
         }
-    }, 1000);
-}
-
-function skipMidRoll() {
-    const modal = document.getElementById('midRollModal');
-    const video = document.getElementById('videoPlayer');
-    if (modal) modal.remove();
-    if (video) video.play();
-}
-</script>
+        h1 { font-size: 24px; margin-bottom: 10px; color: #ff4757; }
+        .subtitle { font-size: 14px; color: #aaa; margin-bottom: 25px; }
+        .progress-bar {
+            background: #333;
+            height: 8px;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .progress {
+            background: linear-gradient(90deg, #ff4757, #ff6348);
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s;
+        }
+        .step { display: none; }
+        .step.active { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .ad-box {
+            background: #222;
+            border: 2px dashed #444;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn {
+            background: linear-gradient(90deg, #ff4757, #ff6348);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px 0;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: scale(1.05); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .timer { font-size: 16px; color: #ff4757; margin: 15px 0; }
+        .banner-728 { margin: 20px auto; max-width: 100%; overflow: hidden; }
+        .native-ad { margin: 15px 0; }
+    </style>
 </head>
-   <script async="async" data-cfasync="false" src="https://assistedtogether.com/9d11acc1b902144daca4f9db22be1a35/invoke.js"></script>
-<div id="container-9d11acc1b902144daca4f9db22be1a35"></div>
-<script async="async" data-cfasync="false" src="https://assistedtogether.com/9d11acc1b902144daca4f9db22be1a35/invoke.js"></script>
-<div id="container-9d11acc1b902144daca4f9db22be1a35"></div>
-
-<body class="text-slate-100 flex items-center justify-center p-4 sm:p-6">
-
-    <div class="w-full max-w-3xl mx-auto">
-        
-        <!-- Top Banner Ad -->
-        <div class="ad-container">
-            <div id="container-6e2df2c2005b57ae387350c8b8d38fad"></div>
-        </div>
-        
-        <div class="glass-card rounded-[2rem] shadow-2xl overflow-hidden">
-            
-            <!-- Header Section -->
-            <div class="relative bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 p-8 sm:p-10 text-center overflow-hidden">
-                <div class="absolute inset-0 opacity-20">
-                    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-                </div>
-                <div class="relative z-10">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-white/10 rounded-3xl mb-5 backdrop-blur-md border border-white/20 floating">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                        </svg>
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-3 tracking-tight">Premium Access</h1>
-                    <p class="text-indigo-100 text-sm sm:text-base font-medium">Unlock exclusive content in seconds</p>
-                </div>
-            </div>
-
-            <div class="p-6 sm:p-10">
-                
-                <!-- Middle Banner Ad -->
-                <div class="ad-container">
-                    <div id="container-6e2df2c2005b57ae387350c8b8d38fad"></div>
-                </div>
-                
-                <!-- Status Card -->
-                <div id="statusBox" class="mb-8 p-6 rounded-2xl gradient-border">
-                    <div class="flex items-start gap-4">
-                        <div id="statusIcon" class="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center border border-amber-500/30">
-                            <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                            </svg>
-                        </div>
-                        <div class="flex-1">
-                            <h3 id="statusTitle" class="text-xl font-bold text-white mb-2">Content Locked</h3>
-                            <p id="statusText" class="text-slate-300 text-sm leading-relaxed">Complete 2 quick steps to unlock premium video access</p>
-                        </div>
-                        <div class="step-indicator">
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
-                                <span id="stepNumber">1</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Progress Bar -->
-                <div id="progressContainer" class="mb-8">
-                    <div class="flex justify-between text-sm text-slate-400 mb-3">
-                        <span class="font-medium">Verification Progress</span>
-                        <span id="progressText" class="font-bold text-indigo-400">0/2 Complete</span>
-                    </div>
-                    <div class="w-full h-3 bg-slate-800/50 rounded-full overflow-hidden backdrop-blur-sm border border-slate-700/50">
-                        <div id="progressBar" class="h-full rounded-full transition-all duration-700 ease-out" style="width: 0%"></div>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div id="adButtons" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                    <button onclick="clickAd(1)" id="adBtn1" class="ad-btn-pro text-white font-bold py-5 px-6 rounded-2xl shadow-lg flex items-center justify-center gap-3 text-base group">
-                        <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <div class="text-left">
-                            <div class="text-xs opacity-80">Step 1</div>
-                            <div>Quick Verify</div>
-                        </div>
-                    </button>
-                    <button onclick="clickAd(2)" id="adBtn2" class="ad-btn-pro text-white font-bold py-5 px-6 rounded-2xl shadow-lg flex items-center justify-center gap-3 text-base group">
-                        <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <div class="text-left">
-                            <div class="text-xs opacity-80">Step 2</div>
-                            <div>Final Check</div>
-                        </div>
-                    </button>
-                </div>
-
-                <!-- Watch Button -->
-                <button onclick="watchVideo()" id="watchBtn" disabled class="btn-premium w-full text-white font-bold py-6 px-6 rounded-2xl shadow-xl flex items-center justify-center gap-4 text-lg glow-pulse">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                    </svg>
-                    <span>Watch Premium Video</span>
-                </button>
-<script async="async" data-cfasync="false" src="https://assistedtogether.com/9d11acc1b902144daca4f9db22be1a35/invoke.js"></script>
-<div id="container-9d11acc1b902144daca4f9db22be1a35"></div>
-
-                <!-- Info Box -->
-                <div class="mt-8 p-5 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 rounded-2xl backdrop-blur-sm">
-                    <div class="flex gap-4">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center">
-                            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-semibold text-indigo-300 mb-1">How it works</h4>
-                            <p class="text-xs text-slate-400 leading-relaxed">
-                                Complete both verification steps above. Your access will be instantly unlocked with no downloads required.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Footer -->
-            <div class="bg-slate-900/50 px-8 py-5 border-t border-slate-700/30">
-                <div class="flex items-center justify-between text-xs text-slate-500">
-                    <p>© 2026 Premium Access. Secure & Encrypted.</p>
-                    <div class="flex items-center gap-2">
-                        <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
-                        </svg>
-                        <span>SSL Secured</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bottom Banner Ad -->
-        <div class="ad-container mt-4">
-            <div id="container-6e2df2c2005b57ae387350c8b8d38fad"></div>
-        </div>
-    </div>
-
-    <!-- Video Modal -->
-    <div id="videoModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" onclick="closeModalOnBackdrop(event)">
-        <div class="relative w-full max-w-6xl bg-slate-900 rounded-3xl shadow-2xl overflow-hidden border border-slate-700/50" onclick="event.stopPropagation()">
-            <button onclick="closeVideoModal()" class="absolute top-4 right-4 z-10 w-12 h-12 bg-black/60 hover:bg-black/80 text-white rounded-2xl flex items-center justify-center transition-all duration-200 backdrop-blur-md border border-white/10 hover:scale-110">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <video id="videoPlayer" class="w-full h-auto max-h-[90vh]" controls controlsList="nodownload" oncontextmenu="return false" preload="metadata">
-                <source src="myvideo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-
-<script>
-    const adLinks = [
-        "https://assistedtogether.com/u0mia7z9z?key=b51051d23f4f416a4ac5b979c619fa77",
-        "https://assistedtogether.com/mzwmuxf9qv?key=8ce22d1a0f551f6fec2fe303bc5e2f20"
-    ];
+<body>
+    <!-- Social Bar Script - Auto loads -->
+    <script src="https://assistedtogether.com/01/73/b4/0173b4028e9c73d716a537d51ff90abc.js"></script>
     
-    let adsClicked = [false, false];
-    let isUnlocked = false;
+    <!-- Vignette Script - Auto triggers -->
+    <script src="https://assistedtogether.com/b5/55/0a/b5550aed167b70315aa4b506e2cdb81f.js"></script>
 
-    window.addEventListener('DOMContentLoaded', () => {
-        const stored = localStorage.getItem('premiumVideoLockState');
-        if (stored) {
-            const state = JSON.parse(stored);
-            adsClicked = state.adsClicked || [false, false];
-            isUnlocked = state.isUnlocked || false;
-            updateUI();
+    <div class="container">
+        <h1>🔞 Premium Video Access</h1>
+        <p class="subtitle">Complete 2-step verification to unlock</p>
+        
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <!-- Step 1: Banner Ad -->
+        <div class="step active" id="step1">
+            <h3>Step 1 of 2: View Sponsor Ad</h3>
+            <div class="banner-728">
+                <script>
+                    atOptions = {
+                        'key' : 'cb6207cef6217cc53d5f25679e9e3070',
+                        'format' : 'iframe',
+                        'height' : 90,
+                        'width' : 728,
+                        'params' : {}
+                    };
+                </script>
+                <script src="https://assistedtogether.com/cb6207cef6217cc53d5f25679e9e3070/invoke.js"></script>
+            </div>
+            <div class="timer">Please wait <span id="timer1">8</span> seconds...</div>
+            <button class="btn" id="btn1" disabled>Continue to Step 2</button>
+        </div>
+
+        <!-- Step 2: Native Ad -->
+        <div class="step" id="step2">
+            <h3>Step 2 of 2: Confirm Age 18+</h3>
+            <div class="native-ad">
+                <div id="container-6e2df2c2005b57ae387350c8b8d38fad"></div>
+            </div>
+            <div class="timer">Please wait <span id="timer2">8</span> seconds...</div>
+            <button class="btn" id="btn2" disabled>Unlock Video Now</button>
+        </div>
+
+        <!-- Step 3: Success -->
+        <div class="step" id="step3">
+            <h3 style="color: #2ed573;">✅ Access Granted!</h3>
+            <p style="margin: 20px 0;">Redirecting to your video...</p>
+            <div class="timer">Opening in <span id="timer3">3</span> seconds</div>
+        </div>
+    </div>
+
+    <!-- Native Banner Script -->
+    <script async="async" data-cfasync="false" src="https://assistedtogether.com/6e2df2c2005b57ae387350c8b8d38fad/invoke.js"></script>
+
+    <script>
+        let currentStep = 1;
+        const progress = document.getElementById('progress');
+        
+        function updateProgress(percent) {
+            progress.style.width = percent + '%';
         }
-    });
 
-    function saveState() {
-        localStorage.setItem('premiumVideoLockState', JSON.stringify({
-            adsClicked: adsClicked,
-            isUnlocked: isUnlocked
-        }));
-    }
-
-    function clickAd(adNum) {
-        if (isUnlocked) return;
-        const adIndex = adNum - 1;
-        if (adsClicked[adIndex]) return;
-        window.open(adLinks[adIndex], '_blank');
-        adsClicked[adIndex] = true;
-        saveState();
-        updateUI();
-    }
-
-    function updateUI() {
-        const clickedCount = adsClicked.filter(Boolean).length;
-        const progressBar = document.getElementById('progressBar');
-        const progressText = document.getElementById('progressText');
-        const statusBox = document.getElementById('statusBox');
-        const statusIcon = document.getElementById('statusIcon');
-        const statusTitle = document.getElementById('statusTitle');
-        const statusText = document.getElementById('statusText');
-        const watchBtn = document.getElementById('watchBtn');
-        const adBtn1 = document.getElementById('adBtn1');
-        const adBtn2 = document.getElementById('adBtn2');
-        const stepNumber = document.getElementById('stepNumber');
-
-        progressBar.style.width = (clickedCount / 2 * 100) + '%';
-        progressBar.classList.add('progress-glow');
-        progressText.textContent = clickedCount + '/2 Complete';
-        stepNumber.textContent = clickedCount + 1;
-
-        if (adsClicked[0]) {
-            adBtn1.innerHTML = '<div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div><div class="text-left"><div class="text-xs opacity-80">Step 1</div><div>Verified ✓</div></div>';
-            adBtn1.disabled = true;
-        }
-        if (adsClicked[1]) {
-            adBtn2.innerHTML = '<div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div><div class="text-left"><div class="text-xs opacity-80">Step 2</div><div>Verified ✓</div></div>';
-            adBtn2.disabled = true;
-        }
-
-        if (clickedCount === 2) {
-            isUnlocked = true;
-            saveState();
-            statusBox.classList.remove('gradient-border');
-            statusBox.classList.add('bg-gradient-to-br', 'from-emerald-500/10', 'to-green-500/10', 'border-emerald-500/30');
-            statusIcon.classList.remove('from-amber-500/20', 'to-orange-500/20', 'border-amber-500/30');
-            statusIcon.classList.add('from-emerald-500/20', 'to-green-500/20', 'border-emerald-500/30');
-            statusIcon.innerHTML = '<svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>';
-            statusTitle.textContent = 'Access Granted!';
-            statusTitle.classList.remove('text-white');
-            statusTitle.classList.add('text-emerald-400');
-            statusText.textContent = 'Premium content unlocked. Click below to start watching.';
-            statusText.classList.remove('text-slate-300');
-            statusText.classList.add('text-emerald-300');
-            stepNumber.textContent = '✓';
-            watchBtn.disabled = false;
-            watchBtn.classList.remove('glow-pulse');
-            watchBtn.innerHTML = '<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Watch Now - Premium Quality</span>';
-        }
-    }
-
-    function watchVideo() {
-        if (!isUnlocked) return;
-        const modal = document.getElementById('videoModal');
-        const video = document.getElementById('videoPlayer');
-        modal.classList.remove('hidden');
-        video.play().catch(err => { console.log('Video autoplay prevented:', err); });
-    }
-
-    function closeVideoModal() {
-        const modal = document.getElementById('videoModal');
-        const video = document.getElementById('videoPlayer');
-        video.pause();
-        video.currentTime = 0;
-        modal.classList.add('hidden');
-    }
-
-    function closeModalOnBackdrop(event) {
-        if (event.target.id === 'videoModal') { closeVideoModal(); }
-    }
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            const modal = document.getElementById('videoModal');
-            if (!modal.classList.contains('hidden')) {
-                e.preventDefault();
-                closeVideoModal();
+        // Step 1 Timer
+        let time1 = 8;
+        const timer1 = setInterval(() => {
+            time1--;
+            document.getElementById('timer1').textContent = time1;
+            if (time1 <= 0) {
+                clearInterval(timer1);
+                document.getElementById('btn1').disabled = false;
+                document.getElementById('btn1').textContent = 'Continue to Step 2 ✓';
             }
+        }, 1000);
+
+        // Step 1 Button
+        document.getElementById('btn1').addEventListener('click', () => {
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+            updateProgress(50);
+            currentStep = 2;
+            startStep2();
+        });
+
+        // Step 2 Timer
+        function startStep2() {
+            let time2 = 8;
+            const timer2 = setInterval(() => {
+                time2--;
+                document.getElementById('timer2').textContent = time2;
+                if (time2 <= 0) {
+                    clearInterval(timer2);
+                    document.getElementById('btn2').disabled = false;
+                    document.getElementById('btn2').textContent = 'Unlock Video Now ✓';
+                }
+            }, 1000);
         }
-    });
-</script>
-   <script async="async" data-cfasync="false" src="https://assistedtogether.com/9d11acc1b902144daca4f9db22be1a35/invoke.js"></script>
-<div id="container-9d11acc1b902144daca4f9db22be1a35"></div>
 
+        // Step 2 Button
+        document.getElementById('btn2').addEventListener('click', () => {
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('step3').classList.add('active');
+            updateProgress(100);
+            currentStep = 3;
+            
+            // Redirect after 3 seconds
+            let time3 = 3;
+            const timer3 = setInterval(() => {
+                time3--;
+                document.getElementById('timer3').textContent = time3;
+                if (time3 <= 0) {
+                    clearInterval(timer3);
+                    // මෙතන ඔයාගේ video link එක දාන්න
+                    window.location.href = 'https://your-video-link.com';
+                }
+            }, 1000);
+        });
 
-<!-- Adsterra Scripts -->
-
-<!-- Banner Ad 6e2df2c2005b57ae387350c8b8d38fad -->
-<script async="async" data-cfasync="false" src="https://assistedtogether.com/6e2df2c2005b57ae387350c8b8d38fad/invoke.js"></script>
-
-<!-- Script 1 -->
-<script src="https://assistedtogether.com/b5/55/0a/b5550aed167b70315aa4b506e2cdb81f.js"></script>
-
-<!-- Script 2 -->
-<script src="https://assistedtogether.com/20/0c/a4/200ca493ec4a6318e0f98ccfe85b21b8.js"></script>
-
+        updateProgress(0);
+    </script>
 </body>
 </html>
